@@ -1,0 +1,56 @@
+<body>
+    <form (ngSubmit)="createSalaire()">
+      <div>
+        <label for="numEmp">Numéro d'employé:</label>
+        <input type="text" id="numEmp" formControlName="numEmp" [value]="salaireRetraite.numEmp" />
+      </div>
+      <div>
+        <label for="numAssSoc">Numéro d'assurance sociale:</label>
+        <input type="text" id="numAssSoc" formControlName="numAssSoc" [value]="salaireRetraite.numAssSoc" />
+      </div>
+      <div>
+        <label for="salaireDeclare">Salaire déclaré:</label>
+        <input type="text" id="salaireDeclare" formControlName="salaireDeclare" [value]="salaireRetraite.salaireDeclare" />
+      </div>
+      <div>
+        <label for="salairePlafonne">Salaire plafonné:</label>
+        <input type="text" id="salairePlafonne" formControlName="salairePlafonne" [value]="salaireRetraite.salairePlafonne" />
+      </div>
+      <div>
+        <label for="salaireDifferentiel">Salaire différentiel:</label>
+        <input type="text" id="salaireDifferentiel" formControlName="salaireDifferentiel" [value]="salaireRetraite.salaireDifferentiel" />
+      </div>
+      <button type="submit">Créer salaire</button>
+    </form>
+
+    <table class="table table-blue">
+      <thead class="thead-blue">
+          <tr>
+              <th>ID</th>
+              <th>NumEmployee</th>
+              <th>NumeroAssureSocial</th>
+              <th>SalaireDeclare</th>
+              <th>SalairePlafonne</th>
+              <th>SalaireDifferentiel</th>
+          </tr>
+      </thead>
+      <tbody>
+          @for (salaire of salaires; track salaire.id) {
+          <tr>
+              <td>{{ salaire.id }}</td>
+              <td>{{ salaire.numEmp }}</td>
+              <td>{{ salaire.numAssSoc }}</td>
+              <td>{{ salaire.salaireDeclare }}</td>
+              <td>{{ salaire.salairePlafonne }}</td>
+              <td>{{ salaire.salaireDifferentiel }}</td>
+          </tr>
+          } @empty {
+          <tr>
+              <td colspan="6">
+                  <span style="color: red;">liste de salairiers vide</span>
+              </td>
+          </tr>
+          }
+      </tbody>
+  </table>
+</body>

@@ -1,0 +1,26 @@
+.resize-img {
+    position: absolute;
+    top: 0%;
+    left: 95%;
+    /* transform: translateX(-50%); */
+    width: 75px;
+    height: 75px;
+}
+
+nav {
+    height: 75px;
+}
+
+/*
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    background-image: url(/assets/bg_img.jpg);
+    background-size:contain; 
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+*/
